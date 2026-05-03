@@ -1,0 +1,17 @@
+{
+  "version": "1.0",
+  "description": "Curated station identity merge decisions used by the public Dianchi pipeline.",
+  "section_aliases": {
+    "新河村入湖口（金属筛片厂小桥）": "新河村入湖口(金属筛片厂小桥)",
+    "大观河入湖口(航运公司)(篆塘河泵站)": "大观河入湖口",
+    "西园隧道": "西苑隧道",
+    "严家村桥": "严家村桥(盘龙江)"
+  },
+  "whitelist_pairs": [],
+  "blacklist_pairs": [],
+  "notes": [
+    "National-scale white/black lists are not released because full national identity metadata is restricted.",
+    "This file keeps the schema expected by pipeline.py and can be extended without code changes."
+  ]
+}
+

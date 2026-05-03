@@ -1,0 +1,7 @@
+﻿__pycache__/
+*.pyc
+generated_datasets/
+generated_datasets_aug/
+results/
+.DS_Store
+*.cache

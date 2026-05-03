@@ -1,0 +1,16 @@
+{
+  "version": "1.0",
+  "description": "Manual canonicalization rules released with the Dianchi subset.",
+  "section_name_canonicalization": {
+    "新河村入湖口（金属筛片厂小桥）": "新河村入湖口(金属筛片厂小桥)",
+    "大观河入湖口(航运公司)(篆塘河泵站)": "大观河入湖口",
+    "西园隧道": "西苑隧道",
+    "严家村桥": "严家村桥(盘龙江)",
+    "滇池南(老)": "滇池南",
+    "罗家营(老)": "罗家营"
+  },
+  "notes": [
+    "Includes bracket variant normalization and known aliases observed in released years.",
+    "Additional national-scale geocoding coordinate fixes are not distributed in this public subset."
+  ]
+}
