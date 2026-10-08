@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: >-
+  If you use the Dianchi Water dataset or this benchmark code, please cite
+  both the repository and the accompanying paper.
+type: software
+title: 'Dianchi Water: Dataset & Benchmark Code'
+version: 1.0.0
+authors:
+  - family-names: Zhang
+    given-names: Fengming
+  - family-names: Yu
+    given-names: Ke
+  - family-names: Du
+    given-names: Wenjie
+  - family-names: Zhang
+    given-names: Huan
+  - family-names: Qu
+    given-names: Shen
+repository-code: 'https://github.com/milaogou/dianchi-water-code'
+abstract: >-
+  Code release for the Dianchi Water benchmark: the executable eight-stage
+  curation pipeline, natural-missingness workload generation, the mask-view
+  augmentation (MAS) training protocol, and imputation/forecasting benchmark
+  harnesses for 11 architectures on a curated surface-water-quality panel,
+  with cross-dataset replication on Beijing Air Quality and ETTh1.
+license: BSD-3-Clause
+keywords:
+  - time-series imputation
+  - missing data
+  - structured missingness
+  - benchmark
+  - water quality
+  - environmental monitoring

@@ -1,0 +1,40 @@
+{
+  "title": "Dianchi Water: Dataset & Benchmark Code for Time-Series Imputation under Structured Missingness",
+  "description": "Code release accompanying the Dianchi Water benchmark: the executable eight-stage data-curation pipeline (station identity canonicalization, sentinel remapping, duplicate reconciliation), natural-missingness workload generation, the mask-view augmentation strategy (MAS) training protocol, and imputation/forecasting benchmark harnesses for 11 architectures on a curated surface-water-quality panel from the Dianchi Lake basin automatic monitoring network (22 stations, 9 variables, four-hourly sampling, 2022-2024, 19.8% natural missingness), with cross-dataset replication on Beijing Air Quality and ETTh1. The dataset itself is released separately on Hugging Face under CC BY 4.0.",
+  "creators": [
+    {
+      "name": "Zhang, Fengming",
+      "affiliation": "Beijing Institute of Technology"
+    },
+    {
+      "name": "Yu, Ke",
+      "affiliation": "Beijing Institute of Technology"
+    },
+    {
+      "name": "Du, Wenjie",
+      "affiliation": "PyPOTS Research"
+    },
+    {
+      "name": "Zhang, Huan",
+      "affiliation": "Beijing Institute of Technology"
+    },
+    {
+      "name": "Qu, Shen",
+      "affiliation": "Beijing Institute of Technology"
+    }
+  ],
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "time-series imputation",
+    "missing data",
+    "structured missingness",
+    "benchmark",
+    "water quality",
+    "environmental monitoring",
+    "PyPOTS"
+  ],
+  "upload_type": "software",
+  "access_right": "open",
+  "language": "eng",
+  "notes": "Fengming Zhang and Ke Yu contributed equally."
+}

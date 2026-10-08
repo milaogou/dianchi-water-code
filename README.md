@@ -1,14 +1,23 @@
-# Dianchi Water: Dataset & MAS Benchmark Code
+# Dianchi Water: Dataset & Benchmark Code
 
-Anonymous code release for the paper *"A High-Frequency Multi-Station Surface
-Water Quality Dataset and Mask-View Augmentation Benchmark for Time-Series
-Imputation"*.
+Code release for the paper *"Dianchi Water: A Curated High-Frequency
+Multi-Station Water Quality Dataset and Benchmark for Time-Series Imputation
+under Structured Missingness"* (PVLDB Vol. 20, Experiment, Analysis &
+Benchmark submission, 2026).
 
-This repository provides the **Dianchi Water** dataset, a fully reproducible
-**MAS (Mask-view Augmentation Strategy)** training pipeline, and benchmark
-scripts for both **imputation** (the paper's main task, 11 architectures) and
-**forecasting from incomplete inputs** (Appendix, 7 architectures), with
-cross-dataset replication on Beijing Air Quality and ETTh1.
+**Authors:** Fengming Zhang\*, Ke Yu\*, Wenjie Du, Huan Zhang, Shen Qu
+(\* equal contribution). Fengming Zhang, Ke Yu, Huan Zhang, and Shen Qu are
+with the Center for Energy and Environmental Policy Research, the School of
+Management, and the Beijing Lab for System Engineering of Carbon Neutrality,
+Beijing Institute of Technology. Wenjie Du is the creator and maintainer of
+[PyPOTS](https://pypots.com/), the Python toolbox this benchmark builds on.
+
+This repository provides the executable curation pipeline for the
+**Dianchi Water** dataset, a fully reproducible **MAS (Mask-view Augmentation
+Strategy)** training protocol, and benchmark scripts for both **imputation**
+(the paper's main task, 11 architectures) and **forecasting from incomplete
+inputs** (paper §6.7, 7 architectures), with cross-dataset replication on
+Beijing Air Quality and ETTh1.
 
 ## Repository structure
 
@@ -33,7 +42,7 @@ cross-dataset replication on Beijing Air Quality and ETTh1.
 │   ├── train_baseline.py        # Standard recipe (single pattern, single rate)
 │   └── train_mas.py             # MAS recipe; evaluates on all 5 test masks
 ├── configs/
-│   ├── hpo_results.py           # Per-model imputation HPO (paper Appendix H)
+│   ├── hpo_results.py           # Per-model imputation HPO (supplementary App. I)
 │   └── hpo_results_fcst.py      # Per-model forecasting HPO
 ├── run_minimal_exp.py           # Imputation smoke test (SAITS, baseline + MAS)
 ├── run_minimal_forecast.py      # Forecasting smoke test (TimesNet, 18→6 horizon)
@@ -101,7 +110,7 @@ python run_minimal_exp.py
 ```
 
 **Forecasting** (TimesNet @ DianchiWater, 18→6 horizon, 5 seeds, natural
-input missingness — no synthetic injection, per paper Section 5.6):
+input missingness — no synthetic injection, per paper §6.7):
 
 ```bash
 python run_minimal_forecast.py
@@ -115,7 +124,7 @@ benchmark below.
 The paper's main table evaluates each model on **5 fixed test masks** so that
 scores are directly comparable across models and recipes. Reproduction is a
 three-step process. Examples below use **iTransformer**, one of the strongest
-beneficiaries of MAS in the paper (Section 5.5); swap `--model` for any of
+beneficiaries of MAS in the paper (§6.2); swap `--model` for any of
 the eleven supported architectures (see `MODELS` in
 `benchmark/train_baseline.py`).
 
@@ -216,7 +225,7 @@ accordingly (`beijing_air_quality_*` → `etth1_*`).
 `run_minimal_forecast.py` is the full forecasting entry point: looping over
 the 7 architectures listed in `configs/hpo_results_fcst.py` (edit the model
 name at the top of the script) and the 5 random seeds reproduces the
-forecasting table in the paper's Appendix end-to-end. Each window is split
+forecasting baseline table (paper §6.7) end-to-end. Each window is split
 into 18 input steps and a 6-step prediction horizon; the input retains the
 natural block-structured missingness without synthetic injection, making
 this a substantially harder setting than fully observed forecasting
@@ -246,6 +255,21 @@ identical seeds — this is expected non-determinism from cuDNN kernel
 selection and floating-point reduction order, not a defect of the release.
 The relative MAS-vs-baseline improvement is stable across the test
 environments we have verified.
+
+## Citation
+
+If you use the Dianchi Water dataset or this code, please cite:
+
+```bibtex
+@software{dianchi_water_code,
+  author  = {Zhang, Fengming and Yu, Ke and Du, Wenjie and
+             Zhang, Huan and Qu, Shen},
+  title   = {{Dianchi Water: Dataset \& Benchmark Code}},
+  year    = {2026},
+  url     = {https://github.com/milaogou/dianchi-water-code},
+  license = {BSD-3-Clause}
+}
+```
 
 ## License
 
