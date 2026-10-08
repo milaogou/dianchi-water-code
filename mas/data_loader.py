@@ -13,7 +13,7 @@ import os
 import pandas as pd
 
 HUGGINGFACE_URL = (
-    "https://huggingface.co/datasets/anonymous-dianchi-2026/"
+    "https://huggingface.co/datasets/ceepr-bit/"
     "dianchi-water/resolve/main/data/dianchi_data_df.parquet"
 )
 CACHE_DIR = os.path.join(os.path.expanduser("~"), ".cache", "dianchi_water")
@@ -40,7 +40,7 @@ def _download_if_needed():
     try:
         from huggingface_hub import hf_hub_download
         path = hf_hub_download(
-            repo_id="anonymous-dianchi-2026/dianchi-water",
+            repo_id="ceepr-bit/dianchi-water",
             filename="data/dianchi_data_df.parquet",
             repo_type="dataset",
         )

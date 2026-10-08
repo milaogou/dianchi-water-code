@@ -70,7 +70,7 @@ smoke tests; full benchmark reproduction is GPU-recommended.
 
 ## Dataset
 
-Hosted at https://huggingface.co/datasets/anonymous-dianchi-2026/dianchi-water.
+Hosted at https://huggingface.co/datasets/ceepr-bit/dianchi-water.
 Auto-downloaded on first call and cached at `~/.cache/dianchi_water/` — no
 manual download.
 
