@@ -17,6 +17,10 @@ authors:
   - family-names: Qu
     given-names: Shen
 repository-code: 'https://github.com/milaogou/dianchi-water-code'
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23232257
+    description: Archived version of this repository on Zenodo
 abstract: >-
   Code release for the Dianchi Water benchmark: the executable eight-stage
   curation pipeline, natural-missingness workload generation, the mask-view

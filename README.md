@@ -1,5 +1,8 @@
 # Dianchi Water: Dataset & Benchmark Code
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23232257.svg)](https://doi.org/10.5281/zenodo.23232257)
+[![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](LICENSE)
+
 Code release for the paper *"Dianchi Water: A Curated High-Frequency
 Multi-Station Water Quality Dataset and Benchmark for Time-Series Imputation
 under Structured Missingness"* (PVLDB Vol. 20, Experiment, Analysis &
@@ -260,6 +263,10 @@ environments we have verified.
 
 If you use the Dianchi Water dataset or this code, please cite:
 
+The archived version of this repository is preserved on Zenodo at
+<https://doi.org/10.5281/zenodo.23232257> (concept DOI
+10.5281/zenodo.23232256 for all versions).
+
 ```bibtex
 @software{dianchi_water_code,
   author  = {Zhang, Fengming and Yu, Ke and Du, Wenjie and
@@ -267,6 +274,7 @@ If you use the Dianchi Water dataset or this code, please cite:
   title   = {{Dianchi Water: Dataset \& Benchmark Code}},
   year    = {2026},
   url     = {https://github.com/milaogou/dianchi-water-code},
+  doi     = {10.5281/zenodo.23232257},
   license = {BSD-3-Clause}
 }
 ```
