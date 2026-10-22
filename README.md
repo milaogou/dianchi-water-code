@@ -3,10 +3,12 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23232257.svg)](https://doi.org/10.5281/zenodo.23232257)
 [![License: BSD-3-Clause](https://img.shields.io/badge/License-BSD--3--Clause-blue.svg)](LICENSE)
 
-Code release for the paper *"Dianchi Water: A Curated High-Frequency
-Multi-Station Water Quality Dataset and Benchmark for Time-Series Imputation
-under Structured Missingness"* (PVLDB Vol. 20, Experiment, Analysis &
-Benchmark submission, 2026).
+Code release for the paper *"Benchmarking Time-Series Imputation under
+Structured Missingness: A Curated Multi-Station Water Quality Dataset
+from an Operational Monitoring Network"* (PVLDB Vol. 20, Experiment,
+Analysis & Benchmark submission, 2026). The paper releases the
+**Dianchi Water** dataset, a curated surface water quality panel from
+the Dianchi Lake basin.
 
 **Authors:** Fengming Zhang\*, Ke Yu\*, Wenjie Du, Huan Zhang, Shen Qu
 (\* equal contribution). Fengming Zhang, Ke Yu, Huan Zhang, and Shen Qu are
