@@ -25,6 +25,16 @@ from pypots.utils.logging import logger
 from pypots.utils.metrics import calc_mae, calc_mse, calc_mre
 from pypots.utils.random import set_random_seed
 
+# HELIX was merged into PyPOTS in v1.5 (pypots.imputation.HELIX).
+# Older installations can fall back to the standalone HELIX package instead.
+try:
+    from pypots.imputation import HELIX
+except ImportError:
+    try:
+        from helix import HELIX
+    except ImportError:
+        HELIX = None
+
 import sys; sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 from configs.hpo_results import HPO_RESULTS
 
@@ -32,11 +42,17 @@ RANDOM_SEEDS = [2024, 2025, 2026, 2027, 2028]
 
 MODELS = {
     "BRITS": BRITS, "CSDI": CSDI,
-    # "HELIX": HELIX,
+    "HELIX": HELIX,
     "iTransformer": iTransformer, "ModernTCN": ModernTCN,
     "MOMENT": MOMENT, "NonstationaryTransformer": NonstationaryTransformer,
     "PatchTST": PatchTST, "SAITS": SAITS, "StemGNN": StemGNN, "TEFN": TEFN,
 }
+MODELS = {name: cls for name, cls in MODELS.items() if cls is not None}
+if HELIX is None:
+    logger.warning(
+        "HELIX is unavailable in this environment: upgrade PyPOTS to "
+        ">= 1.5 (pip install -U pypots) to benchmark it."
+    )
 
 
 def load_dataset(fold_path):
@@ -81,6 +97,17 @@ if __name__ == "__main__":
         round_path = os.path.join(args.saving_path, f"round_{n_round}")
 
         hp = HPO_RESULTS[args.dataset][args.model].copy()
+        if (
+            args.model == "HELIX"
+            and HELIX is not None
+            and HELIX.__module__.startswith("pypots")
+        ):
+            # PyPOTS >= 1.5 renamed the HELIX constructor arguments:
+            # pe_dim -> d_pe, feature_embed_dim -> d_feature_embed.
+            if "pe_dim" in hp:
+                hp["d_pe"] = hp.pop("pe_dim")
+            if "feature_embed_dim" in hp:
+                hp["d_feature_embed"] = hp.pop("feature_embed_dim")
         lr = hp.pop("lr")
         hp.update(device=args.device, saving_path=round_path,
                   model_saving_strategy="best", optimizer=Adam(lr=lr))

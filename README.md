@@ -70,6 +70,14 @@ smoke tests; full benchmark reproduction is GPU-recommended.
 > via `requirement.txt` above; the conda file pins ARM-specific package
 > builds that will not resolve on x86 Linux, macOS, or Windows.
 
+> **Note on HELIX.** HELIX is benchmarked through its reference
+> implementation in [PyPOTS](https://pypots.com/) >= 1.5
+> (`pypots.imputation.HELIX`). If your PyPOTS is older, the training
+> scripts fall back to the standalone HELIX package and translate the
+> argument names (`pe_dim` -> `d_pe`, `feature_embed_dim` ->
+> `d_feature_embed`) automatically, so the HPO configurations in
+> `configs/hpo_results.py` remain unchanged.
+
 ## Dataset
 
 Hosted at https://huggingface.co/datasets/ceepr-bit/dianchi-water.
